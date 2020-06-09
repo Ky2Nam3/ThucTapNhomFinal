@@ -1,42 +1,96 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Sản Phẩm
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/paper-dashboard.css" rel="stylesheet" />
+    <link href="~/Content/css/admin.css" rel="stylesheet" />
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+<body class="">
+    <div class="wrapper ">
+        <div class="sidebar" data-color="white" data-active-color="danger">
+            <div class="logo">
+                <a href="#" class="simple-text logo-mini">
+                    <div class="logo-image-small">
+                        <img src="/Content/images/logo-small.png">
+                    </div>
+                </a>
+                <a href="#" class="simple-text logo-normal">
+                    Coffee Manager
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <div class="sidebar-wrapper">
+
+                <ul class="nav text-center">
+
+                    <li class="active">
+                        <a href="@Url.Action("Ban","Ban")"><h5> <marquee scrollamount="0">HOME</marquee></h5></a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","SanPham")"><h5> <marquee scrollamount="0">SẢN PHẨM</marquee></h5></a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","NhanViens")"><h5> <marquee scrollamount="0">NHÂN VIÊN</marquee></h5></a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","NguyenLieux")"><h5> <marquee scrollamount="0">NGUYÊN LIỆU</marquee></h5></a>
+
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Bill")"><h5> <marquee scrollamount="0">HÓA ĐƠN</marquee></h5></a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","DoanhThu")"><h5> <marquee scrollamount="0">DOANH THU</marquee></h5></a>
+
+                    </li>
+
                 </ul>
             </div>
+            <style>
+                .sidebar-wrapper ul li :hover {
+                    color: blue;
+                }
+            </style>
         </div>
+        <div class="main-panel">
+            <div class="row">
+                <h2>
+                    <style>
+                        h2 {
+                            color: red;
+                        }
+                    </style>
+                    <marquee width="150%">TRANG XỬ LÝ CỦA ADMIN LOVE COFFEE</marquee>
+                </h2>
+            </div>
+            @RenderBody()
+        </div>
+        <style>
+            .main-panel row h1 {
+                color: red;
+            }
+        </style>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!--   Core JS Files   -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/plugins/ckfinder/ckfinder.js"></script>
 </body>
 </html>
+
+
+
+
