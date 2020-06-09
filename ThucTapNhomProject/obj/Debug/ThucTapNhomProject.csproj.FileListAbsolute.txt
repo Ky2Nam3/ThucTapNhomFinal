@@ -235,3 +235,4 @@ E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\New
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\Antlr3.Runtime.pdb
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csproj.CopyComplete
+E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csprojAssemblyReference.cache
