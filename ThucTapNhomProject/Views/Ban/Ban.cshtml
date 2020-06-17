@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "Ban";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using ThucTapNhomProject.Models
+@model IEnumerable<Ban>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>ĐT-Coffee</title>
+
+
+
+    <style>
+        .button-false {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: white;
+            background-color: rgb(90, 104, 57);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px rgb(62, 67, 87);
+            width: 150px;
+            height: 180px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px rgb(62, 67, 87);
+            width: 150px;
+            height: 180px;
+        }
+
+            .button:hover {
+                background-color: #e7d8ad
+            }
+
+        .Nen {
+            background-image: url('/Content/images/master.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Nen">
+        <div class="container padding">
+            <div class="row welcome text-center">
+                <div class="col-12">
+                    <br>
+                    <h3 class="display-5">Danh Sách Bàn Hiện Tại Của Quán</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <button type="button" class="btn btn-outline-light" style="color: red">
+                <a href="/Ban/DatBan"><i class="fa fa-users">Them Ban</i></a>           
+            </button>
+            <div class="row hang">
+                @foreach(Ban it in Model)
+                {
+                    if (it.TrangThai == true)
+                    {                     
+                <div class="col-md-3 cot">
+                    <a href="/Ban/DoiTrangThai/@it.MaBan" style="color: white">
+                        <button type="button" class="btn btn-outline-light button">
+                            <i class="fa fa-users"></i>
+                            <h3>@it.TenBan</h3>
+                            <h3>Full</h3>
+                            <a href="/Ban/Delete/@it.MaBan"><i class="fa fa-trash" style="font-size: 70%"></i></a>
+                        </button>               
+                    </a>
+                </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-3 cot2">
+                            <a href="/Ban/DoiTrangThai/@it.MaBan" style="color: white">
+                                <button type="button" class="btn btn-outline-light button-false">
+                                    <i class="fa fa-coffee"></i>
+                                    <h3>@it.TenBan</h3>
+                                    <h3>Trống</h3>
+                                    <a href="/Ban/Delete/@it.MaBan"><i class="fa fa-trash"style="font-size: 70%"></i></a>
+                                </button>
+                            </a>
+                        </div>
+                    }
+                    <style>
+                        .cot a{
+                            text-decoration: none;
+                        }
+                        .cot2 a {
+                            text-decoration: none;
+                        }
+                    </style>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+

@@ -236,3 +236,7 @@ E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\Ant
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csproj.CopyComplete
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csprojAssemblyReference.cache
+E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.dll
+E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.dll
+E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.xml
+E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.xml
