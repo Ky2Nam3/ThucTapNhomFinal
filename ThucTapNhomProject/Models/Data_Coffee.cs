@@ -8,7 +8,7 @@ namespace ThucTapNhomProject.Models
     public partial class Data_Coffee : DbContext
     {
         public Data_Coffee()
-            : base("name=Data_Coffee")
+            : base("name=Data_Coffee1")
         {
         }
 

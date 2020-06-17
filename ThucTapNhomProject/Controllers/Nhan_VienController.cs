@@ -12,8 +12,7 @@ namespace TTCSDL_CAFE.Areas.Admin.Controllers
 {
     public class NhanViensController : Controller
     {
-        private CafeDbContext db = new CafeDbContext();
-
+        private Data_Coffee db = new Data_Coffee();
         [HttpPost]
         public ActionResult Index(string searching)
         {

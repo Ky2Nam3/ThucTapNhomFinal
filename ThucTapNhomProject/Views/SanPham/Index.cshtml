@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using ThucTapNhomProject.Models
+@model IEnumerable<Mon>
+
+    <div class="row">
+        <div>
+            <button class="btn btn-outline-primary sel"><a href="@Url.Action("TaoMoi", "SanPham")">Thêm Sản Phẩm</a></button>
+        </div>
+        <div class="col-md-12">
+            <div class="card card-plain">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class=" text-primary">
+                            <th>
+                                Mã Sản Phẩm
+                            </th>
+                            <th>
+                                Tên Sản Phẩm
+                            </th>
+                            <th>
+                                Giá
+                            </th>
+
+                            <th>
+                                Hình Ảnh
+                            </th>
+                            <th>
+                                Mô Tả
+                            </th>
+                            <th colspan="2">
+                                Chức Năng
+                            </th>
+
+                            </thead>
+                            <tbody>
+
+                                @foreach (Mon item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.MaMon
+                                        </td>
+                                        <td>
+                                            @item.TenMon
+                                        </td>
+                                        <td>
+                                            @item.DonGia
+                                        </td>
+                                        <td>
+                                            <img src="../Content/images/menu1/@item.HinhAnh" width="100px" , height="100px">
+                                        </td>
+                                        <td>
+                                            @item.MoTa
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary sel"><a href="/SanPham/ChinhSua/@item.MaMon">Chỉnh Sửa</a></button>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-outline-primary sel"><a href="/SanPham/Xoa/@item.MaMon">Xóa</a></button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
