@@ -1,8 +1,76 @@
 ﻿
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@using ThucTapNhomProject.Models
+@model IEnumerable<HoaDon>
+
+<div class="row">
+    <div>
+        <button class="btn btn-outline-primary sel"><a href="@Url.Action("Create", "Bill")">Thêm Hóa Đơn</a></button>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Số Hóa Đơn
+                        </th>
+                        <th>
+                            Mã Bàn
+                        </th>
+                        <th>
+                            Ngày Tạo
+                        </th>
+                        <th>
+                            Tổng Tiền
+                        </th>
+                        <th colspan="2">
+                            Chức Năng
+                        </th>
+                        </thead>
+                        <tbody>
+
+                            @foreach (HoaDon item in Model)
+                            {
+                            <tr>
+                                <td>
+                                    @item.SoHD
+                                </td>
+                                <td>
+                                    @item.MaBan
+                                </td>
+                                <td>
+                                    @item.NgayTao
+                                </td>
+                                <td>
+                                    @item.TongTien
+                                </td>
+                                <td>
+                                    <a href="/Bill/ThemHoaDon/@item.SoHD"><i class="fa fa-facebook" style="font-size: 150%"></i></a>
+                                </td>
+                                <td>
+                                    <a href="/Bill/Delete/@item.SoHD"><i class="fa fa-trash" style="font-size: 150%"></i></a>
+                                </td>
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 

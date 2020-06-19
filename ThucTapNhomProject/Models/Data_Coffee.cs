@@ -22,6 +22,7 @@ namespace ThucTapNhomProject.Models
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PhieuNhap> PhieuNhaps { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
+        public EntityState Deleted { get; internal set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
