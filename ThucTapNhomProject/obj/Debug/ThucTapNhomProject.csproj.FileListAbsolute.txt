@@ -152,7 +152,6 @@ C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\System.Web.WebPages
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\Newtonsoft.Json.xml
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\Antlr3.Runtime.pdb
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csprojAssemblyReference.cache
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csproj.CoreCompileInputs.cache
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csproj.CopyComplete
 C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.dll
@@ -240,3 +239,8 @@ E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\Ent
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.dll
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.xml
 E:\C#\ThucTapNhomProject\ThucTapNhom\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.xml
+C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.dll
+C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.dll
+C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.xml
+C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\bin\EntityFramework.SqlServer.xml
+C:\Users\ABC\Desktop\ThucTapNhomFinal\ThucTapNhomProject\obj\Debug\ThucTapNhomProject.csprojAssemblyReference.cache

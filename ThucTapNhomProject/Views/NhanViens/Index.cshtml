@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using ThucTapNhomProject.Models
+@model IEnumerable<NhanVien>
+
+<div class="row">
+    <div>
+        <button class="btn btn-outline-primary sel"><a href="@Url.Action("Create", "NhanViens")">Thêm Nhân Viên</a></button>
+    </div>
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            MaNV
+                        </th>
+                        <th>
+                            Họ Tên
+                        </th>
+                        <th>
+                            Số Điện Thoại
+                        </th>
+                        <th>
+                            Ngày Sinh
+                        </th>
+                        <th>
+                            Vị Trí
+                        </th>
+                        <th>
+                            Lương Cơ Bản
+                        </th>
+                        <th colspan="2">
+                            Chức Năng
+                        </th>
+
+                        </thead>
+                        <tbody>
+
+                            @foreach (NhanVien item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.MaNV
+                                    </td>
+                                    <td>
+                                        @item.HoTen
+                                    </td>
+                                    <td>
+                                        @item.SDT
+                                    </td>
+                                    <td>
+                                        @item.NgaySinh
+                                    </td>
+                                    <td>
+                                        @item.ViTri
+                                    </td>
+                                    <td>
+                                        @item.LuongCoBan
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/Edit/@item.MaNV">Chỉnh Sửa</a></button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/Delete/@item.MaNV">Xóa</a></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
