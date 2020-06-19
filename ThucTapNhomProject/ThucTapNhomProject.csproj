@@ -262,6 +262,8 @@
     <Content Include="Views\Ban\Ban.cshtml" />
     <Content Include="Views\Ban\DatBan.cshtml" />
     <Content Include="Views\Ban\DoiTrangThai.cshtml" />
+    <Content Include="Views\Bill\Create.cshtml" />
+    <Content Include="Views\Bill\ThemHoaDon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container padding">
+    <div class="container padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h3 class="display-5">Thêm Hóa Đơn</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row datban">
+        <div class="col-md-12">
+            <form action="/Bill/ThemHD" method="post">
+                @*<div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="sel1">
+                            <h6 class="display-6">Số Hóa Đơn</h6>
+                        </label>
+                        <input type="text" class="form-control form-control-sm"
+                               placeholder="Số hóa đơn" name="SoHD">
+                    </div>
+                </div>*@
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="sel1">
+                            <h6 class="display-6">Mã Bàn</h6>
+                        </label>
+                        <input type="text" class="form-control form-control-sm"
+                               placeholder="mã bàn" name="MaBan">
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="sel1">
+                            <h6 class="display-6">Mã Nhân Viên</h6>
+                        </label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control form-control-sm"
+                                   placeholder="mã nhân viên" name="MaNV">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="sel1">
+                            <h6 class="display-6">Ngày Tạo</h6>
+                        </label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control form-control-sm"
+                                   placeholder="ngày tạo" name="NgayTao">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        @*<label for="sel1">
+                            <h6 class="display-6">Số Lượng</h6>
+                        </label>*@
+                        <div class="input-group date">
+                            <input type="hidden" class="form-control form-control-sm"
+                                   placeholder="số lượng" name="TongTien" value="0">
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="sel1">
+                            <h6 class="display-6">Mã Món</h6>
+                        </label>
+                        <div class="input-group date">
+                            <input type="text" class="form-control form-control-sm"
+                                   placeholder="mã món" name="MaMon">
+                        </div>
+                    </div>
+                </div>*@
+                <button type="submit" class="btn btn-primary btn-block" value="ThemHD">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
