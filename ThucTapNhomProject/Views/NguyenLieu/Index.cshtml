@@ -1,14 +1,15 @@
 ﻿
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using ThucTapNhomProject.Models
-@model IEnumerable<NhanVien>
+@model IEnumerable<NguyenLieu>
 
 <div class="row">
     <div>
-        <button class="btn btn-outline-primary sel"><a href="@Url.Action("Create", "NhanViens")">Thêm Nhân Viên</a></button>
+        <button class="btn btn-outline-primary sel"><a href="@Url.Action("Create", "NguyenLieu")">Thêm Nguyên Liệu</a></button>
     </div>
     <div class="col-md-12">
         <div class="card card-plain">
@@ -17,56 +18,43 @@
                     <table class="table">
                         <thead class=" text-primary">
                         <th>
-                            MaNV
+                            MaNL
                         </th>
                         <th>
-                            Họ Tên
+                            Tên Nguyên Liệu
                         </th>
                         <th>
-                            Số Điện Thoại
+                            Đơn Vị Tính
                         </th>
                         <th>
-                            Ngày Sinh
-                        </th>
-                        <th>
-                            Vị Trí
-                        </th>
-                        <th>
-                            Lương Cơ Bản
+                            Nhà Cung Cấp
                         </th>
                         <th colspan="2">
                             Chức Năng
                         </th>
-
                         </thead>
                         <tbody>
 
-                            @foreach (NhanVien item in Model)
+                            @foreach (NguyenLieu item in Model)
                             {
                                 <tr>
                                     <td>
-                                        @item.MaNV
+                                        @item.MaNL
                                     </td>
                                     <td>
-                                        @item.HoTen
+                                        @item.TenNL
                                     </td>
                                     <td>
-                                        @item.SDT
+                                        @item.DVT
                                     </td>
                                     <td>
-                                        @item.NgaySinh
+                                        @item.NhaCungCap
                                     </td>
                                     <td>
-                                        @item.ViTri
+                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/Edit/@item.MaNL">Chỉnh Sửa</a></button>
                                     </td>
                                     <td>
-                                        @item.LuongCoBan
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/Edit/@item.MaNV">Chỉnh Sửa</a></button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/DeleteNV/@item.MaNV">Xóa</a></button>
+                                        <button class="btn btn-outline-primary sel"><a href="/NhanViens/DeleteNV/@item.MaNL">Xóa</a></button>
                                     </td>
                                 </tr>
                             }
