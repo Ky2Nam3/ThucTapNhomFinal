@@ -36,7 +36,6 @@ namespace ThucTapNhomProject.Controllers
             return View(model);
         }
 
-
         [HttpPost]
         public ActionResult ThemHoaDon(ChiTietHoaDon model)
         {
@@ -52,19 +51,20 @@ namespace ThucTapNhomProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            //List<ChiTietHoaDon> lisChiTiet = new List<ChiTietHoaDon>();
-            var model1 = db.ChiTietHoaDons.SqlQuery("select SoHD from ChiTietHoaDon where SoHD = id").ToList();
-            //lisChiTiet = db.ChiTietHoaDons.Where(n => n.SoHD == id).ToList();
-            
-
-            var model = db.HoaDons.Find(id);
-            db.HoaDons.Remove(model);
-
+            HoaDon hd = db.HoaDons.SingleOrDefault(n => n.SoHD == id);
+            List<ChiTietHoaDon> cthd = db.ChiTietHoaDons.Where(n => n.SoHD == id).ToList();
+            if (hd == null)
+            {
+                Response.StatusCode = 404; 
+                return null;
+            }
+            db.HoaDons.Remove(hd);
             db.SaveChanges();
             return RedirectToAction("Index");
-
         }
     }
 }

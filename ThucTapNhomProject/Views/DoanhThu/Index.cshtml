@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using ThucTapNhomProject;
+@model IEnumerable<ThucTapNhomProject.Models.HoaDon>
+
+@{ float i = 0;}
+<div class="row">
+    <div class="col-md-12">
+        <form method="post" action="ThongKeDoanhThu">
+            <table class="table">
+                <thead class=" text-primary">
+                <th>
+                    Ngày 1
+                </th>
+
+                <th>
+                    Ngày 2
+                </th>
+
+                <th>
+                </th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th>
+                            <input type="text" name="ngay1" placeholder="nhập ngày 1" class="text-center"/>
+                        </th>
+                        <th>
+                            <input type="text" name="ngay2" placeholder="nhập ngày 2"  class="text-center"/>
+                        </th>
+                        <th>
+                            <button>Thống Kê</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        <div class="card card-plain">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <div>
+                        <h3 class="text-center">
+                            Danh Sách Hóa Đơn
+                        </h3>
+                    </div>
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Số Hóa Đơn
+                        </th>
+                        <th>
+                            Mã Bàn
+                        </th>
+                        <th>
+                            Ngày Tạo
+                        </th>
+                        <th>
+                            Tổng Tiền
+                        </th>
+                        </thead>
+                        <tbody>
+
+                            @foreach (ThucTapNhomProject.Models.HoaDon item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @item.SoHD
+                                    </td>
+                                    <td>
+                                        @item.MaBan
+                                    </td>
+                                    <td>
+                                        @item.NgayTao
+                                    </td>
+                                    <td>
+                                        @item.TongTien.ToString("N0")
+                                    </td>
+                                </tr>
+
+                                i += Convert.ToInt32(@item.TongTien);
+                            }
+                        </tbody>
+                    </table>
+                    <div>
+                        <h5 class="Tongtien">Doanh thu của quán: @i.ToString("N0") VNĐ </h5>
+                        <style>
+                            .Tongtien {
+                                color: red;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

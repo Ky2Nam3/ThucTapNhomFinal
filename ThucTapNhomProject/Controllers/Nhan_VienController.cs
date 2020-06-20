@@ -137,5 +137,20 @@ namespace TTCSDL_CAFE.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult Search(string TenNV)
+        {
+            List<NhanVien> model = new List<NhanVien>();
+            if (TenNV != "")
+            {
+                model = db.NhanViens.Where(x => x.HoTen == TenNV).ToList();
+            }
+            else
+            {
+                model = db.NhanViens.Where(x => x.HoTen != null).ToList();
+            }
+            return View("Index", model);
+        }
     }
 }

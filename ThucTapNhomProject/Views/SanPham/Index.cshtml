@@ -6,70 +6,85 @@
 @using ThucTapNhomProject.Models
 @model IEnumerable<Mon>
 
-    <div class="row">
+<div class="row text-center">
+    <div class="col-md-3">
         <div>
-            <button class="btn btn-outline-primary sel"><a href="@Url.Action("TaoMoi", "SanPham")">Thêm Sản Phẩm</a></button>
+            <button class="btn btn-outline-primary sel"><a href="@Url.Action("TaoMoi", "SanPham")"> <i class="fa fa-plus-circle">Thêm Sản Phẩm</i></a></button>
         </div>
-        <div class="col-md-12">
-            <div class="card card-plain">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class=" text-primary">
-                            <th>
-                                Mã Sản Phẩm
-                            </th>
-                            <th>
-                                Tên Sản Phẩm
-                            </th>
-                            <th>
-                                Giá
-                            </th>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <div>
+            <form action="Search" method="post">
+                <input type="text" class="form-control form-control-sm"
+                       placeholder="nhập tên" name="TenMon">
+                <button type="submit" class="btn btn-outline-primary sel">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-                            <th>
-                                Hình Ảnh
-                            </th>
-                            <th>
-                                Mô Tả
-                            </th>
-                            <th colspan="2">
-                                Chức Năng
-                            </th>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                        <th>
+                            Mã Sản Phẩm
+                        </th>
+                        <th>
+                            Tên Sản Phẩm
+                        </th>
+                        <th>
+                            Giá
+                        </th>
 
-                            </thead>
-                            <tbody>
+                        <th>
+                            Hình Ảnh
+                        </th>
+                        <th>
+                            Mô Tả
+                        </th>
+                        <th colspan="2">
+                            Chức Năng
+                        </th>
 
-                                @foreach (Mon item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @item.MaMon
-                                        </td>
-                                        <td>
-                                            @item.TenMon
-                                        </td>
-                                        <td>
-                                            @item.DonGia
-                                        </td>
-                                        <td>
-                                            <img src="../Content/images/menu1/@item.HinhAnh" width="100px" , height="100px">
-                                        </td>
-                                        <td>
-                                            @item.MoTa
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary sel"><a href="/SanPham/ChinhSua/@item.MaMon">Chỉnh Sửa</a></button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary sel"><a href="/SanPham/Xoa/@item.MaMon">Xóa</a></button>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                        </thead>
+                        <tbody>
+
+                            @foreach (Mon item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.MaMon
+                                    </td>
+                                    <td>
+                                        @item.TenMon
+                                    </td>
+                                    <td>
+                                        @item.DonGia
+                                    </td>
+                                    <td>
+                                        <img src="../Content/images/menu1/@item.HinhAnh" width="100px" , height="100px">
+                                    </td>
+                                    <td>
+                                        @item.MoTa
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary sel"><a href="/SanPham/ChinhSua/@item.MaMon">Chỉnh Sửa</a></button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary sel"><a href="/SanPham/Xoa/@item.MaMon">Xóa</a></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
