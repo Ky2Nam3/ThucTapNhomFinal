@@ -104,54 +104,30 @@ namespace TTCSDL_CAFE.Areas.Admin.Controllers
         }
 
         // GET: Admin/NhanViens1/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    NhanVien nhanVien = db.NhanViens.Find(id);
-        //    if (nhanVien == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(nhanVien);
-        //}
-
-        //// POST: Admin/NhanViens1/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    NhanVien nhanVien = db.NhanViens.Find(id);
-        //    db.NhanViens.Remove(nhanVien);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-
-        [HttpGet]
-        public ActionResult DeleteNV(int manv)
+        public ActionResult Delete(int? id)
         {
-            NhanVien nhanVien = db.NhanViens.SingleOrDefault(n => n.MaNV == manv);
-
-            HoaDon HD = db.HoaDons.SingleOrDefault(n => n.MaNV == manv);
-            List<ChiTietHoaDon> cthd = db.ChiTietHoaDons.Where(n => n.SoHD == HD.SoHD).ToList();
-
-            PhieuNhap PN = db.PhieuNhaps.SingleOrDefault(n => n.MaNV == manv);
-            List<ChiTietPhieuNhap> ctpn = db.ChiTietPhieuNhaps.Where(n => n.MaPhieuNhap == PN.MaPhieuNhap).ToList();
-            if(nhanVien == null)
+            if (id == null)
             {
-                Response.StatusCode = 404;
-                return null;
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            db.NhanViens.Remove(nhanVien); 
+            NhanVien nhanVien = db.NhanViens.Find(id);
+            if (nhanVien == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nhanVien);
+        }
+
+        // POST: Admin/NhanViens1/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            NhanVien nhanVien = db.NhanViens.Find(id);
+            db.NhanViens.Remove(nhanVien);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-
 
         protected override void Dispose(bool disposing)
         {
