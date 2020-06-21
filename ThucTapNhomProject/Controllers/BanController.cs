@@ -46,7 +46,6 @@ namespace ThucTapNhomProject.Controllers
             db.SaveChanges();
             return RedirectToAction("Ban", model);
         }
-
         public ActionResult Delete(int id)
         {
             var model = db.Bans.Find(id);

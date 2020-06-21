@@ -147,5 +147,20 @@ namespace TTCSDL_CAFE.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult Search(string TenMon)
+        {
+            List<Mon> model = new List<Mon>();
+            if (TenMon != "")
+            {
+                model = db.Mons.Where(x => x.TenMon == TenMon).ToList();
+            }
+            else
+            {
+                model = db.Mons.Where(x => x.TenMon != null).ToList();
+            }
+            return View("Index", model);
+        }
     }
 }

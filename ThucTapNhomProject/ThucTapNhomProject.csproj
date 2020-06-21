@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BanController.cs" />
     <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\DoanhThuController.cs" />
     <Compile Include="Controllers\NguyenLieuController.cs" />
     <Compile Include="Controllers\Nhan_VienController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
@@ -273,7 +274,11 @@
     <Content Include="Views\NhanViens\Create.cshtml" />
     <Content Include="Views\NhanViens\Edit.cshtml" />
     <Content Include="Views\NhanViens\Delete.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\NguyenLieu\Index.cshtml" />
+=======
+    <Content Include="Views\DoanhThu\Index.cshtml" />
+>>>>>>> 8835d21d913f9e27a77044c7218c2cdce1ce5704
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
