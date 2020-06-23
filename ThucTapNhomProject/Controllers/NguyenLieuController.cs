@@ -140,5 +140,20 @@ namespace ThucTapNhomProject.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult Search(string TenNL)
+        {
+            List<NguyenLieu> model = new List<NguyenLieu>();
+            if (TenNL != "")
+            {
+                model = db.NguyenLieux.Where(x => x.TenNL == TenNL).ToList();
+            }
+            else
+            {
+                model = db.NguyenLieux.Where(x => x.TenNL != null).ToList();
+            }
+            return View("Index", model);
+        }
     }
 }

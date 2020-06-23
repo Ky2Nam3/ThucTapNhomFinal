@@ -275,10 +275,13 @@
     <Content Include="Views\NhanViens\Edit.cshtml" />
     <Content Include="Views\NhanViens\Delete.cshtml" />
     <Content Include="Views\DoanhThu\Index.cshtml" />
+    <Content Include="Views\NguyenLieu\Create.cshtml" />
+    <Content Include="Views\NguyenLieu\Index.cshtml" />
+    <Content Include="Views\NguyenLieu\Edit.cshtml" />
+    <Content Include="Views\NguyenLieu\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\NguyenLieu\" />
     <Folder Include="Views\Nhan_Vien\" />
   </ItemGroup>
   <ItemGroup>
