@@ -104,27 +104,43 @@ namespace TTCSDL_CAFE.Areas.Admin.Controllers
         }
 
         // GET: Admin/NhanViens1/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
-            {
-                return HttpNotFound();
-            }
-            return View(nhanVien);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    NhanVien nhanVien = db.NhanViens.Find(id);
+        //    if (nhanVien == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(nhanVien);
+        //}
 
-        // POST: Admin/NhanViens1/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        //// POST: Admin/NhanViens1/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    NhanVien nhanVien = db.NhanViens.Find(id);
+        //    db.NhanViens.Remove(nhanVien);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+
+        [HttpGet]
+        public ActionResult delete(int id)
         {
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            db.NhanViens.Remove(nhanVien);
+            NhanVien NV = db.NhanViens.SingleOrDefault(n => n.MaNV == id);
+
+            //HoaDon hd = db.HoaDons.SingleOrDefault(n => n.MaNV == id);
+            //List<ChiTietHoaDon> cthd = db.ChiTietHoaDons.Where(n => n.SoHD == hd.SoHD).ToList();
+
+            //PhieuNhap NL = db.PhieuNhaps.SingleOrDefault(n => n.MaNV == id);
+            //List<ChiTietPhieuNhap> ctpn = db.ChiTietPhieuNhaps.Where(n => n.MaPhieuNhap == NL.MaPhieuNhap).ToList();
+
+            db.NhanViens.Remove(NV);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

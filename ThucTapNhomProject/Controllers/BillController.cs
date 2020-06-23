@@ -25,6 +25,8 @@ namespace ThucTapNhomProject.Controllers
         [HttpPost]
         public ActionResult ThemHD(HoaDon model)
         {
+            var BanHD = db.Bans.Find(model.MaBan);
+            BanHD.TrangThai = true;
             db.HoaDons.Add(model);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -39,7 +41,15 @@ namespace ThucTapNhomProject.Controllers
         [HttpPost]
         public ActionResult ThemHoaDon(ChiTietHoaDon model)
         {
-            db.ChiTietHoaDons.Add(model);
+            var cthd = db.ChiTietHoaDons.SingleOrDefault(n => n.SoHD == model.SoHD && n.MaMon == model.MaMon);
+            if (cthd == null)
+            {
+                db.ChiTietHoaDons.Add(model);
+            }
+            else
+            {
+                cthd.SoLuong += 1;
+            }
 
             Mon a = db.Mons.Find(model.MaMon);
             HoaDon hd = db.HoaDons.Find(model.SoHD);
@@ -59,9 +69,13 @@ namespace ThucTapNhomProject.Controllers
             List<ChiTietHoaDon> cthd = db.ChiTietHoaDons.Where(n => n.SoHD == id).ToList();
             if (hd == null)
             {
-                Response.StatusCode = 404; 
+                Response.StatusCode = 404;
                 return null;
             }
+
+            var BanHD = db.Bans.SingleOrDefault(n => n.MaBan == hd.MaBan);
+            BanHD.TrangThai = false;
+
             db.HoaDons.Remove(hd);
             db.SaveChanges();
             return RedirectToAction("Index");
